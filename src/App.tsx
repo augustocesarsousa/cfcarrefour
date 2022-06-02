@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Header from 'components/header';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { Product } from './types/product';
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Compra Fácil Carrefour</h1>
+      <Header />
       {products?.map((product) => (
         <p key={product.productId}>
           {product.productId} - {product.productName}
