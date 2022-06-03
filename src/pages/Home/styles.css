@@ -1,0 +1,28 @@
+.home-content{
+  margin: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-card-content{
+  padding: 10px;
+}
+
+.home-card-content input {
+  margin-bottom: 10px;
+}
+
+.home-title {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: var(--blue-100);
+}
+
+.home-subtitle {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--gray-75);
+}
