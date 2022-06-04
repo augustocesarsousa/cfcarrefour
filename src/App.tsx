@@ -1,9 +1,9 @@
 // import axios from 'axios';
 import Header from 'components/Header';
-import Home from 'pages/Home';
+import ProductCard from 'components/ProductCard';
+import './App.css';
 // import { useEffect, useState } from 'react';
 import './assets/styles/custom.scss';
-import './App.css';
 // import { Product } from './types/product';
 // import { Sellers } from './types/seller';
 
@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="app-content">
-        <Home />
+        <ProductCard />
       </div>
     </div>
   );
