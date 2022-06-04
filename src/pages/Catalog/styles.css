@@ -1,0 +1,43 @@
+.catalog-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-title {
+  font-size: 20px;
+  text-align: center;
+  max-width: 650px;
+  color: var(--blue-100);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.catalog-cards {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.catalog-cards div {
+  padding: 5px;
+}
+
+@media(min-width: 576px){
+  .catalog-container {
+    padding: 20px;
+  }
+  .catalog-title {
+    font-size: 28px;
+  }
+}
+
+@media(min-width: 768px){
+  .catalog-container {
+    padding: 30px;
+  }
+
+  .catalog-title {
+    font-size: 38px;
+  }
+}

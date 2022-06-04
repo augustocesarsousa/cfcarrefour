@@ -12,4 +12,5 @@
 
 .header-title {
   color: var(--blue-100);
+  margin: 0;
 }

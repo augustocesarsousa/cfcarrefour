@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import Header from 'components/Header';
-import ProductCard from 'components/ProductCard';
+import Catalog from 'pages/Catalog';
 import './App.css';
 // import { useEffect, useState } from 'react';
 import './assets/styles/custom.scss';
@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="app-content">
-        <ProductCard />
+        <Catalog />
       </div>
     </div>
   );
