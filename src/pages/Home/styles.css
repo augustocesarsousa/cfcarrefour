@@ -1,12 +1,14 @@
 .home-content{
-  margin: 10px 10px 0 10px;
+  padding: 10px;
+  max-width: 950px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .home-card-content{
   padding: 10px;
+  width: 100%;
 }
 
 .home-card-content input {
@@ -14,15 +16,75 @@
 }
 
 .home-title {
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin: 15px 0;
   text-align: center;
   color: var(--blue-100);
 }
 
 .home-subtitle {
   font-size: 20px;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 25px;
   color: var(--gray-75);
+}
+
+@media(min-width: 576px){
+  .home-content{
+    padding: 30px;
+  }
+
+  .home-subtitle {
+    margin: 15px 10px;
+  }
+
+  .home-card-content{
+    margin-top: 15px;
+    padding: 15px;
+  }
+}
+
+@media(min-width: 768px){
+  .home-content{
+    padding: 40px;
+  }
+
+  .home-subtitle {
+    font-size: 22px;
+    margin: 15px 60px;
+  }
+
+  .home-card-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 500px;
+  }
+
+  .home-card-content input{
+    margin-bottom: 0;
+    width: 70%;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .home-card-content button{
+    width: 30%;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+@media(min-width: 992px){
+  .home-title{
+    font-size: 42px;
+    margin: 20px 0;
+  }
+
+  .home-subtitle {
+    font-size: 26px;
+    margin: 20px 10px;
+  }
+
+  .home-card-content{
+    margin-top: 20px;
+  }
 }

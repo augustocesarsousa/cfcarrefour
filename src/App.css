@@ -51,14 +51,19 @@ a:hover {
 
 .base-card {
   background-color: var(--white);
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px var(--gray-25);
 }
 
 .base-input {
   border-radius: 5px;
   font-size: 1em;
   letter-spacing: -0.015em;
-  color: #263238;
+  color: var(--gray-100);
   height: 50px;
+}
+
+.app-content{
+  display: flex;
+  justify-content: center;
 }

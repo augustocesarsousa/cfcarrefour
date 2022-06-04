@@ -38,7 +38,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
+      <div className="app-content">
+        <Home />
+      </div>
     </div>
   );
 }
