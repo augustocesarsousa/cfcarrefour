@@ -3,7 +3,7 @@ import './styles.css';
 
 const ProductCard = () => {
   return (
-    <div className="base-card product-card-container">
+    <div className="product-card-container base-card">
       <div className="product-card-top-container">
         <img
           className="product-img"
@@ -11,7 +11,7 @@ const ProductCard = () => {
           alt="Açúcar Refinado União 1Kg"
         />
       </div>
-      <div className="product-card-bottom-container">
+      <div className="product-card-bottom-container base-card">
         <h6 className="product-title">Açúcar Refinado União 1Kg</h6>
         <p className="product-price">R$ 3,99</p>
       </div>
