@@ -5,7 +5,7 @@ import './styles.css';
 
 const Home = () => {
   return (
-    <div className="home-content">
+    <div className="home-container">
       <h1 className="home-title">Compra Fácil Carrefour</h1>
       <div className="home-subtitle-content">
         <p className="home-subtitle">

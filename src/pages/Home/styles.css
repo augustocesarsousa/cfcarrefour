@@ -1,4 +1,4 @@
-.home-content{
+.home-container{
   padding: 10px;
   max-width: 950px;
   display: flex;
@@ -45,7 +45,7 @@
 }
 
 @media(min-width: 576px){
-  .home-content{
+  .home-container{
     padding: 30px;
   }
 
@@ -65,7 +65,7 @@
 }
 
 @media(min-width: 768px){
-  .home-content{
+  .home-container{
     padding: 40px;
   }
 
