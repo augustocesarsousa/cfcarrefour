@@ -23,6 +23,10 @@
   padding: 5px;
 }
 
+.link-details {
+  text-decoration: none;
+}
+
 @media(min-width: 576px){
   .catalog-container {
     padding: 20px;

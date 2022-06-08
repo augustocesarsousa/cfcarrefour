@@ -18,6 +18,10 @@ p {
   width: 100%;
 }
 
+.link-goback {
+  text-decoration: none;
+}
+
 .goback-button {
   display: flex;
   align-items: center;

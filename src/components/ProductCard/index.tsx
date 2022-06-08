@@ -11,7 +11,7 @@ const ProductCard = () => {
           alt="Açúcar Refinado União 1Kg"
         />
       </div>
-      <div className="product-card-bottom-container base-card">
+      <div className="product-card-bottom-container">
         <h6 className="product-title">Açúcar Refinado União 1Kg</h6>
         <p className="product-price">R$ 3,99</p>
       </div>

@@ -40,7 +40,7 @@
   width: 100%;
 }
 
-.home-card-content input {
+.input-cep {
   margin-bottom: 10px;
 }
 
@@ -81,14 +81,16 @@
     width: 500px;
   }
 
-  .home-card-content input{
+  .input-cep{
     margin-bottom: 0;
-    width: 70%;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px !important;
   }
 
-  .home-card-content button{
-    width: 30%;
+  .link-cep{
+    width: 50%;
+  }
+
+  .link-cep button{
     border-radius: 0 5px 5px 0;
   }
 }

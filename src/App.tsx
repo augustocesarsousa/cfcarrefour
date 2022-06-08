@@ -1,7 +1,10 @@
 // import axios from 'axios';
 import Header from 'components/Header';
+import Catalog from 'pages/Catalog';
+import Home from 'pages/Home';
 import ProductDetail from 'pages/ProductDetails';
 import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 // import { useEffect, useState } from 'react';
 import './assets/styles/custom.scss';
@@ -68,10 +71,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <div className="app-content">
-        <ProductDetail product={product} />
-      </div>
+      <BrowserRouter>
+        <Header />
+        <div className="app-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path=":cep/products/" element={<Catalog />} />
+            <Route path="/:cep/products/:productId" element={<ProductDetail product={product} />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

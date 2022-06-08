@@ -5,6 +5,12 @@
   border-bottom: 1px solid var(--gray-25);
 }
 
+.header-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .header-logo {
   height: 30px;
   margin: 0 5px 0 15px;

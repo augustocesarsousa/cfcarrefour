@@ -1,5 +1,6 @@
 import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 import BaseButton from 'components/BaseButton';
+import { Link } from 'react-router-dom';
 import { Product } from 'types/product';
 import './styles.css';
 
@@ -8,14 +9,18 @@ type Props = {
 };
 
 const ProductDetail = ({ product }: Props) => {
+  const cep = 17560246;
+
   return (
     <div className="product-detail-container">
       <div className="product-detail-principal base-card">
         <div className="product-detail-img-container">
-          <div className="goback-button">
-            <ArrowIcon />
-            <p>Voltar</p>
-          </div>
+          <Link to={`/${cep}/products`} className="link-goback">
+            <div className="goback-button">
+              <ArrowIcon />
+              <p>Voltar</p>
+            </div>
+          </Link>
           <div className="product-detail-img-content">
             <img
               className="product-detail-img"
