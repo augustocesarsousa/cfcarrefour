@@ -45,12 +45,13 @@ const ProductDetail = ({ product }: Props) => {
               className="product-payment-options base-input"
               placeholder="Condição de pagamento"
             >
-              {product.paymentOptions.map((paymentOption) => (
+              {/* {product.paymentOptions.map((paymentOption) => (
                 <option key={paymentOption.paymentSystem} value={paymentOption.paymentSystem}>
                   {paymentOption.paymentName} até {paymentOption.installments}x de{' '}
                   {paymentOption.value}
                 </option>
-              ))}
+              ))} */}
+              <option value="1">Test</option>
             </select>
           </div>
         </div>
