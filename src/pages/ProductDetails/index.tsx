@@ -1,15 +1,19 @@
 import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 import BaseButton from 'components/BaseButton';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Product } from 'types/product';
 import './styles.css';
+
+type UrlParams = {
+  cep: string;
+};
 
 type Props = {
   product: Product;
 };
 
 const ProductDetail = ({ product }: Props) => {
-  const cep = 17560246;
+  const { cep } = useParams<UrlParams>();
 
   return (
     <div className="product-detail-container">

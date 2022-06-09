@@ -1,11 +1,23 @@
 import Store from 'assets/images/store.png';
 import BaseButton from 'components/BaseButton';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { Cep } from 'types/cep';
 import './styles.css';
 
 const Home = () => {
-  const cep = 17560246;
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<Cep>();
+
+  const onSubmit = (formData: Cep) => {
+    navigate(`/${formData.number}/products`);
+  };
 
   return (
     <div className="home-container">
@@ -17,15 +29,23 @@ const Home = () => {
         </p>
         <img src={Store} />
       </div>
-      <form action="#" className="home-card-content base-card">
-        <input
-          type="text"
-          className="form-control base-input input-cep"
-          placeholder="Digite seu CEP"
-        />
-        <Link to={`/${cep}/products`} className="link-cep">
-          <BaseButton text="Buscar" />
-        </Link>
+      <form className="home-card-content base-card" onSubmit={handleSubmit(onSubmit)}>
+        <div className="home-input-cep-container">
+          <input
+            {...register('number', {
+              required: 'Informe um CEP para efetuar a busca',
+              pattern: {
+                value: /\d{5}-?\d{3}/,
+                message: 'CEP inválido'
+              }
+            })}
+            type="text"
+            className={`form-control base-input input-cep ${errors.number ? 'is-invalid' : ''}`}
+            placeholder="Digite seu CEP"
+          />
+          <div className="invalid-feedback d-block">{errors.number?.message}</div>
+        </div>
+        <BaseButton text="Buscar" />
       </form>
     </div>
   );

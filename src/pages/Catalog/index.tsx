@@ -1,11 +1,28 @@
+import axios from 'axios';
 import ProductCard from 'components/ProductCard';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './styles.css';
+
+type UrlParams = {
+  cep: string;
+};
 
 const Catalog = () => {
   const productId = 1;
-  const cep = 17560246;
+
+  const { cep } = useParams<UrlParams>();
+
+  useEffect(() => {
+    axios
+      .get(`/api/checkout/pub/regions?country=BRA&postalCode=${cep}`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [cep]);
 
   return (
     <div className="catalog-container">

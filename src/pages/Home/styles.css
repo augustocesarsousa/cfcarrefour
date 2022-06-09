@@ -40,6 +40,10 @@
   width: 100%;
 }
 
+.home-input-cep-container{
+  width: 100%;
+}
+
 .input-cep {
   margin-bottom: 10px;
 }
@@ -83,14 +87,12 @@
 
   .input-cep{
     margin-bottom: 0;
+    width: 70%;
     border-radius: 5px 0 0 5px !important;
   }
 
-  .link-cep{
-    width: 50%;
-  }
-
-  .link-cep button{
+  .home-card-content button{
+    width: 30%;
     border-radius: 0 5px 5px 0;
   }
 }
