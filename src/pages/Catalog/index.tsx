@@ -1,8 +1,9 @@
 import axios from 'axios';
 import ProductCard from 'components/ProductCard';
-import React, { useEffect, useState } from 'react';
+import { ProductListContext } from 'context/ProductListContext';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getSellerName, setProductListContext } from 'utils/normalize';
+import { ProductFromAPI } from 'types/productFromAPI';
 import './styles.css';
 
 type UrlParams = {
@@ -10,16 +11,16 @@ type UrlParams = {
 };
 
 const Catalog = () => {
-  const productId = 1;
-
   const { cep } = useParams<UrlParams>();
   const [sellerName, setSellerName] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { productList, setProductList }: any = useContext(ProductListContext);
 
   useEffect(() => {
     axios
       .get(`/api/checkout/pub/regions?country=BRA&postalCode=${cep}`)
       .then((response) => {
-        setSellerName(getSellerName(response.data));
+        setSellerName(response.data.sellers[0].name);
       })
       .catch((error) => {
         console.log(error);
@@ -30,67 +31,29 @@ const Catalog = () => {
     axios
       .get(`/api/catalog_system/pub/products/search?fq=${sellerName}`)
       .then((response) => {
-        setProductListContext(response.data);
+        setProductList(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [sellerName]);
+  }, [sellerName, setProductList]);
 
   return (
     <div className="catalog-container">
       <h1 className="catalog-title">Veja os produtos que encontramos pertinho de você.</h1>
       <div className="catalog-cards row">
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
-        <div className="col-6 col-sm-4 col-lg-3">
-          <Link to={`/${cep}/products/${productId}`} className="link-details">
-            <ProductCard />
-          </Link>
-        </div>
+        {productList.map((product: ProductFromAPI) => (
+          <div className="col-6 col-sm-4 col-lg-3" key={product.productId}>
+            <Link to={`/${cep}/products/${product.productId}`} className="link-details">
+              <ProductCard
+                imageText={product.items[0].images[0].imageText}
+                imageUrl={product.items[0].images[0].imageUrl}
+                price={product.items[0].sellers[0].commertialOffer.Price}
+                productName={product.productName}
+              />
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

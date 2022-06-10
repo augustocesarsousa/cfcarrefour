@@ -1,19 +1,23 @@
 import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 import BaseButton from 'components/BaseButton';
+import { ProductListContext } from 'context/ProductListContext';
+import { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Product } from 'types/product';
+import { ProductFromAPI } from 'types/productFromAPI';
 import './styles.css';
 
 type UrlParams = {
   cep: string;
+  productId: string;
 };
 
-type Props = {
-  product: Product;
-};
-
-const ProductDetail = ({ product }: Props) => {
-  const { cep } = useParams<UrlParams>();
+const ProductDetail = () => {
+  const { cep, productId } = useParams<UrlParams>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { productList }: any = useContext(ProductListContext);
+  const product: ProductFromAPI[] = productList.filter((product: ProductFromAPI) =>
+    product.productId.includes(`${productId}`)
+  );
 
   return (
     <div className="product-detail-container">
@@ -28,16 +32,18 @@ const ProductDetail = ({ product }: Props) => {
           <div className="product-detail-img-content">
             <img
               className="product-detail-img"
-              src={product.imageUrl}
-              alt="Açúcar Refinado União 1Kg"
+              src={product[0].items[0].images[0].imageUrl}
+              alt={product[0].items[0].images[0].imageText}
             />
           </div>
         </div>
         <div className="product-detail-name-content">
           <div className="product-detail-name-left">
-            <h1 className="product-name">{product.productName}</h1>
-            <p className="product-brand">Marca: {product.brand}</p>
-            <p className="product-price">R$ {product.price}</p>
+            <h1 className="product-name">{product[0].productName}</h1>
+            <p className="product-brand">Marca: {product[0].brand}</p>
+            <p className="product-price">
+              R$ {product[0].items[0].sellers[0].commertialOffer.Price}
+            </p>
           </div>
           <div className="product-detail-name-right">
             <BaseButton text="Ir até a loja" />
@@ -45,20 +51,20 @@ const ProductDetail = ({ product }: Props) => {
               className="product-payment-options base-input"
               placeholder="Condição de pagamento"
             >
-              {/* {product.paymentOptions.map((paymentOption) => (
-                <option key={paymentOption.paymentSystem} value={paymentOption.paymentSystem}>
-                  {paymentOption.paymentName} até {paymentOption.installments}x de{' '}
-                  {paymentOption.value}
+              {product[0].items[0].sellers[0].commertialOffer.Installments.sort((a, b) =>
+                a.Name > b.Name ? 1 : b.Name > a.Name ? -1 : 0
+              ).map((installment) => (
+                <option key={installment.PaymentSystemName} value={installment.PaymentSystemName}>
+                  {installment.Name}
                 </option>
-              ))} */}
-              <option value="1">Test</option>
+              ))}
             </select>
           </div>
         </div>
       </div>
       <div className="product-detail-description base-card">
         <h6 className="product-description-title">Descrição do produto</h6>
-        <p className="product-description-text">{product.description}</p>
+        <p className="product-description-text">{product[0].description}</p>
       </div>
     </div>
   );

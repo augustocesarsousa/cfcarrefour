@@ -4,10 +4,11 @@ export type ProductFromAPI = {
   brand: string;
   link: string;
   description: string;
+  Observações: string;
   items: item[];
 };
 
-type item = {
+export type item = {
   measurementUnit: string;
   images: image[];
   sellers: seller[];
@@ -27,16 +28,13 @@ type seller = {
 };
 
 type commertialOffer = {
-  Installments: Installments;
-  Price: number;
-};
-
-type Installments = {
   Installments: Installment[];
+  Price: number;
 };
 
 type Installment = {
   Value: number;
   NumberOfInstallments: number;
-  PaymentSystemName: number;
+  PaymentSystemName: string;
+  Name: string;
 };

@@ -1,5 +1,7 @@
 .product-card-container {
   max-width: 300px;
+  height: 100%;
+  position: relative;
 }
 
 .product-card-top-container {
@@ -19,6 +21,7 @@
 }
 
 .product-price {
+  bottom: 0;
   color: var(--blue-100);
   font-size: 24px;
   font-weight: bold;

@@ -1,20 +1,19 @@
 import Header from 'components/Header';
-import { ProductListContext, ProductListContextData } from 'context/ProductListContext';
+import { ProductListContext } from 'context/ProductListContext';
 import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
+import ProductDetail from 'pages/ProductDetails';
 import { useState } from 'react';
-// import ProductDetail from 'pages/ProductDetails';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ProductFromAPI } from 'types/productFromAPI';
 import './App.css';
 import './assets/styles/custom.scss';
 
 function App() {
-  const [productListContextData, setProductListContextData] = useState<ProductListContextData>({
-    productListContext: []
-  });
+  const [productList, setProductList] = useState<ProductFromAPI[]>([]);
 
   return (
-    <ProductListContext.Provider value={{ productListContextData, setProductListContextData }}>
+    <ProductListContext.Provider value={{ productList, setProductList }}>
       <div className="App">
         <BrowserRouter>
           <Header />
@@ -22,7 +21,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path=":cep/products/" element={<Catalog />} />
-              {/* <Route path=":cep/products/:productId" element={<ProductDetail product={product} />} /> */}
+              <Route path=":cep/products/:productId" element={<ProductDetail />} />
             </Routes>
           </div>
         </BrowserRouter>
