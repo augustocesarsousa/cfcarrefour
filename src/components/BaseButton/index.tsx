@@ -6,7 +6,11 @@ type Props = {
 };
 
 const BaseButton = ({ text }: Props) => {
-  return <button className="btn btn-primary btn-container">{text}</button>;
+  return (
+    <button className="btn btn-primary btn-container" data-testid="button-submit">
+      {text}
+    </button>
+  );
 };
 
 export default BaseButton;

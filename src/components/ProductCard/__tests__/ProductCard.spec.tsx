@@ -17,6 +17,7 @@ test('ProductCard should render card with given props', () => {
     />
   );
 
+  expect(screen.getByAltText(imageText)).toBeInTheDocument();
   expect(screen.getByText(productName)).toBeInTheDocument();
   expect(screen.getByText(`R$ ${price}`)).toBeInTheDocument();
 });
