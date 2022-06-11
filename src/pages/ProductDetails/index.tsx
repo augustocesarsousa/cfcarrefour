@@ -46,7 +46,7 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className="product-detail-name-right">
-            <a href={product[0].link} target="_blank" rel="noreferrer">
+            <a href={product[0].link} target="_blank" rel="noreferrer" className="button-go">
               <BaseButton text="Ir até a loja" />
             </a>
             <select
@@ -57,7 +57,7 @@ const ProductDetail = () => {
                 a.Name > b.Name ? 1 : b.Name > a.Name ? -1 : 0
               ).map((installment) => (
                 <option key={installment.PaymentSystemName} value={installment.PaymentSystemName}>
-                  {installment.Name}
+                  {installment.Name} = R$ {installment.Value}
                 </option>
               ))}
             </select>
@@ -67,6 +67,10 @@ const ProductDetail = () => {
       <div className="product-detail-description base-card">
         <h6 className="product-description-title">Descrição do produto</h6>
         <p className="product-description-text">{product[0].description}</p>
+      </div>
+      <div className="product-detail-observation base-card">
+        <h6 className="product-description-title">Observações</h6>
+        <p className="product-description-text">{product[0].Observações}</p>
       </div>
     </div>
   );

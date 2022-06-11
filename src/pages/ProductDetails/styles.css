@@ -12,7 +12,7 @@ p {
   max-width: 1200px;
 }
 
-.product-detail-principal, .product-detail-description {
+.product-detail-principal, .product-detail-description, .product-detail-observation {
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -67,12 +67,13 @@ p {
   font-weight: bold;
 }
 
-.product-detail-name-right button {
-  margin-bottom: 10px;
+.button-go{
+  width: 100%;
 }
 
 .product-payment-options {
   width: 100%;
+  margin-top: 10px;
 }
 
 .product-description-title {
@@ -85,7 +86,7 @@ p {
     padding: 30px;
   }
 
-  .product-detail-principal, .product-detail-description {
+  .product-detail-principal, .product-detail-description, .product-detail-observation {
     padding: 30px;
     margin-bottom: 30px;
   }
@@ -134,12 +135,12 @@ p {
     margin-bottom: 50px;
   }
 
-  .product-detail-principal, .product-detail-description {
+  .product-detail-principal, .product-detail-description, .product-detail-observation {
     padding: 50px;
     margin-bottom: 50px;
   }
 
-  .product-detail-name-right button, .product-payment-options {
+  .button-go, .product-payment-options {
    width: 300px;
   }
 }

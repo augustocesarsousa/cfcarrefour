@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { ProductListContext } from 'context/ProductListContext';
 import Catalog from 'pages/Catalog';
@@ -24,6 +25,7 @@ function App() {
               <Route path=":cep/products/:productId" element={<ProductDetail />} />
             </Routes>
           </div>
+          <Footer />
         </BrowserRouter>
       </div>
     </ProductListContext.Provider>
