@@ -50,8 +50,7 @@ p {
 }
 
 .product-detail-img {
-  max-width: 350px;
-  width: 100%;
+  max-height: 290px;
 }
 
 .product-name {

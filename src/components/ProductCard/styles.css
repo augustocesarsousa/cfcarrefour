@@ -6,10 +6,13 @@
 
 .product-card-top-container {
   border-bottom: 1px solid var(--gray-25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-img{
-  width: 100%;
+  height: 120px;
 }
 
 .product-card-bottom-container {
@@ -25,4 +28,16 @@
   color: var(--blue-100);
   font-size: 24px;
   font-weight: bold;
+}
+
+@media(min-width: 576px){
+  .product-img{
+    height: 148px;
+  }
+}
+
+@media(min-width: 768px){
+  .product-img{
+    height: 200px;
+  }
 }
