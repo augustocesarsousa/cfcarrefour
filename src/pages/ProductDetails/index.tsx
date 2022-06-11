@@ -15,8 +15,8 @@ const ProductDetail = () => {
   const { cep, productId } = useParams<UrlParams>();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { productList }: any = useContext(ProductListContext);
-  const product: ProductFromAPI[] = productList.filter((product: ProductFromAPI) =>
-    product.productId.includes(`${productId}`)
+  const product: ProductFromAPI[] = productList.filter((item: ProductFromAPI) =>
+    item.productId.includes(`${productId}`)
   );
 
   return (
@@ -46,10 +46,12 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className="product-detail-name-right">
-            <BaseButton text="Ir até a loja" />
+            <a href={product[0].link} target="_blank" rel="noreferrer">
+              <BaseButton text="Ir até a loja" />
+            </a>
             <select
               className="product-payment-options base-input"
-              placeholder="Condição de pagamento"
+              placeholder="Opções de pagamento"
             >
               {product[0].items[0].sellers[0].commertialOffer.Installments.sort((a, b) =>
                 a.Name > b.Name ? 1 : b.Name > a.Name ? -1 : 0
