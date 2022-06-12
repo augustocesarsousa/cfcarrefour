@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/augustocesarsousa/cfcarrefour/static/css/main.a90e96fa.css",
+    "main.js": "/augustocesarsousa/cfcarrefour/static/js/main.216fd9e3.js",
+    "static/js/787.f9ac9ae9.chunk.js": "/augustocesarsousa/cfcarrefour/static/js/787.f9ac9ae9.chunk.js",
+    "static/media/logo.png": "/augustocesarsousa/cfcarrefour/static/media/logo.7c029bd96cae6848f55d.png",
+    "static/media/github.svg": "/augustocesarsousa/cfcarrefour/static/media/github.e1c3b8b1e5be7ca06cd47a8bbaa4e69e.svg",
+    "index.html": "/augustocesarsousa/cfcarrefour/index.html",
+    "static/media/arrow.svg": "/augustocesarsousa/cfcarrefour/static/media/arrow.03e69330cee113e9b968ef7e762bd1f4.svg",
+    "main.a90e96fa.css.map": "/augustocesarsousa/cfcarrefour/static/css/main.a90e96fa.css.map",
+    "main.216fd9e3.js.map": "/augustocesarsousa/cfcarrefour/static/js/main.216fd9e3.js.map",
+    "787.f9ac9ae9.chunk.js.map": "/augustocesarsousa/cfcarrefour/static/js/787.f9ac9ae9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a90e96fa.css",
+    "static/js/main.216fd9e3.js"
+  ]
+}
