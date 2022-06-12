@@ -2,8 +2,7 @@
   "name": "cfcarrefour",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://mercado.carrefour.com.br",
-  "homepage": "http://localhost:3000",
+  "proxy" : "https://mercado.carrefour.com.br",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

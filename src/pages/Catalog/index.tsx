@@ -17,12 +17,11 @@ const Catalog = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { productList, setProductList }: any = useContext(ProductListContext);
   const [isLoading, setIsLoading] = useState(false);
-  const baseUrl = 'https://mercado.carrefour.com.br';
 
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`${baseUrl}/api/checkout/pub/regions?country=BRA&postalCode=${cep}`)
+      .get(`/api/checkout/pub/regions?country=BRA&postalCode=${cep}`)
       .then((response) => {
         setSellerName(response.data.sellers[0].name);
       })
@@ -33,7 +32,7 @@ const Catalog = () => {
 
   useEffect(() => {
     axios
-      .get(`${baseUrl}/api/catalog_system/pub/products/search?fq=${sellerName}`)
+      .get(`/api/catalog_system/pub/products/search?fq=${sellerName}`)
       .then((response) => {
         setProductList(response.data);
       })
