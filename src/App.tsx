@@ -16,7 +16,7 @@ function App() {
   return (
     <ProductListContext.Provider value={{ productList, setProductList }}>
       <div className="App">
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Header />
           <div className="app-content">
             <Routes>
