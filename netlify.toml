@@ -1,10 +1,10 @@
 [[redirects]]
-from = “/api/*”
-to = “https://mercado.carrefour.com.br”
+from = "/api/*"
+to = "https://mercado.carrefour.com.br"
 status = 200
 force = true
 
 [[headers]]
-for = “/*"
+for = "/*"
 [headers.values]
-Access-Control-Allow-Origin = "”
+Access-Control-Allow-Origin = ""
